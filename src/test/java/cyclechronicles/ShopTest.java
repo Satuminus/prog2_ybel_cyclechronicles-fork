@@ -18,7 +18,7 @@ class ShopTest {
     void acceptsValidRaceBikeOrder() {
         Shop shop = new Shop();
 
-        Order order = order(Type.RACE, "Alice");
+        Order order = order(Type.RACE, "Felix");
 
         assertTrue(shop.accept(order));
     }
@@ -27,7 +27,7 @@ class ShopTest {
     void rejectsGravelBikeOrder() {
         Shop shop = new Shop();
 
-        Order order = order(Type.GRAVEL, "Alice");
+        Order order = order(Type.GRAVEL, "Felix");
 
         assertFalse(shop.accept(order));
     }
@@ -36,7 +36,7 @@ class ShopTest {
     void rejectsEbikeOrder() {
         Shop shop = new Shop();
 
-        Order order = order(Type.EBIKE, "Alice");
+        Order order = order(Type.EBIKE, "Felix");
 
         assertFalse(shop.accept(order));
     }
@@ -45,8 +45,8 @@ class ShopTest {
     void rejectsSecondPendingOrderForSameCustomer() {
         Shop shop = new Shop();
 
-        Order firstOrder = order(Type.RACE, "Alice");
-        Order secondOrder = order(Type.RACE, "Alice");
+        Order firstOrder = order(Type.RACE, "Felix");
+        Order secondOrder = order(Type.RACE, "Felix");
 
         assertTrue(shop.accept(firstOrder));
         assertFalse(shop.accept(secondOrder));
